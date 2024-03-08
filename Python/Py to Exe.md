@@ -21,7 +21,7 @@ This guide explains how to convert a Python script (`.py`) into an executable fi
     pyinstaller --onefile your_script.py
 4. Once pyinstaller finishes, locate the executable file in the dist directory.
 
-### Step 2: Change the Icon of the Executable
+### Step 2: **Change the Icon of the Executable**
 1. Prepare an icon file (`.ico`) that you want to use.
 2. Place the icon file in the same directory as your Python script.
 3. Modify the `pyinstaller` command to include the `--icon` option:
@@ -29,3 +29,27 @@ This guide explains how to convert a Python script (`.py`) into an executable fi
    pyinstaller --onefile --icon=your_icon.ico your_script.py
 4. Run the modified `pyinstaller` command.
 5. The generated executable will now have the specified icon.
+
+### Additional customization options:
+   - Application Name:
+     - Modify the `.spec` file before conversion (see example above in 'Additional Tips').
+   - Console Window Visibility:
+     - Hide the console:
+
+       ```bash
+       pyinstaller --onefile --noconsole your_script.py
+       ```
+
+   - Add Version Information:
+     - Embed version information:
+
+       ```bash
+       pyinstaller --onefile --version-file=version_info.txt your_script.py
+       ```
+
+   - Include Additional Files:
+      - Add external files:
+
+       ```bash
+       pyinstaller --onefile --add-data "path/to/your/file;." your_script.py
+       ```
