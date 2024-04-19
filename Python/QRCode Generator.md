@@ -41,3 +41,4 @@ qr = segno.make(
 )
 qr.save("qr_code_custom.svg", kind="svg")
 ```
+![Author link](Author.png)
